@@ -1,0 +1,45 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+/* ============================================= */
+/*              Navigation                       */
+/* ============================================= */
+
+.nav {
+  padding-left: 0;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include mediaQuery("tablet") {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.nav-link {
+  text-align: center;
+  border-radius: $border__radius;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  @include mediaQuery("tablet") {
+    flex-basis: 100px;
+  }
+}
+
+.nav-link:hover {
+  color: $color__primary;
+  background-color: $color__secondary;
+}
+
+.logo {
+  @include mediaQuery("tablet") {
+    margin-left: initial;
+    margin-right: initial;
+  }
+  // I didn't find the class .logo on HTML even though, I took a decision to put on here.
+}

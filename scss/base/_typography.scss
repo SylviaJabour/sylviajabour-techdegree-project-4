@@ -1,0 +1,49 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+
+* {
+  font-family: $font-family__primary;
+  color: $color__base;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: em(23.2px);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============================================= */
+/*              Typography                       */
+/* ============================================= */
+
+.headline-primary {
+  color: $color__secondary;
+  margin-left: 10px;
+}
+
+.headline-secondary {
+  font-weight: $font-weight__light;
+  color: $color__base;
+}
+
+.link {
+  color: $color__primary;
+  font-weight: $font-weight__bold;
+}
+
+.blockquote {
+  font-size: em(24px);
+  font-weight: $font-weight__light;
+  font-style: italic;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 8px solid $color__secondary;
+  border-radius: $border__radius;
+}

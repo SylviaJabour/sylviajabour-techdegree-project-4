@@ -1,0 +1,77 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+$gridColors: (
+  "1": $color__purple-violet,
+  "2": $color__red-coral,
+  "3": $color__purple-mauve,
+  "4": $color__blue-eletric,
+  "5": $color__green-chinook,
+  "6": $color__blue-viking,
+  "7": $color__red-wewak,
+  "8": $color__orange-tangerine,
+  "9": $color__red-froly,
+  "10": $color__green-emerald,
+  "11": $color__blue-turquoise,
+  "12": $color__green-riptide,
+);
+
+$columnNumber: 12;
+
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.container {
+  padding: 0 10px;
+
+  @include mediaQuery("tablet") {
+    max-width: 1400px;
+    @include centered;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  padding: em(16px) 10px;
+
+  @include mediaQuery("tablet") {
+    flex-direction: row;
+  }
+}
+
+[class^="col"] {
+  margin-top: 10px;
+  flex-basis: 100%;
+  min-height: 25px;
+  padding: 10px;
+  border-radius: $border__radius;
+
+  @include mediaQuery("tablet") {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+  }
+}
+
+.theme {
+  @include columnColorGenerator($gridColors);
+}
+
+.card {
+  flex-basis: 100%;
+}
+
+@include mediaQuery("tablet") {
+  [class^="col"] + [class^="col"] {
+    margin-left: 10px;
+  }
+
+  @for $number from 1 through $columnNumber {
+    .col-#{$number} {
+      flex-basis: (100% / $columnNumber) * $number;
+    }
+  }
+}

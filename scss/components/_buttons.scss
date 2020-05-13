@@ -1,0 +1,38 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+$buttonMods: (
+  "error": $color__red-froly,
+  "info": $color__purple-violet,
+  "success": $color__green-emerald,
+  "warning": $color__red-coral,
+);
+
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+
+.btn {
+  margin-top: 15px;
+  width: 100%;
+  color: $color__base;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: $border__radius;
+  background-color: $color__primary;
+
+  @include mediaQuery("tablet") {
+    padding: 10px 30px;
+
+    + .btn {
+      margin-left: 10px;
+    }
+  }
+}
+
+@each $mod, $color in $buttonMods {
+  .#{$mod} {
+    background-color: $color;
+  }
+}
