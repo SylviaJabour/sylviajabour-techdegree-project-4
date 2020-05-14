@@ -23,6 +23,11 @@ $buttonMods: (
   text-transform: uppercase;
   border-radius: $border__radius;
   background-color: $color__primary;
+  transition: background-color 0.2s ease-out;
+
+  &:hover {
+    background-color: lighten($color__primary, 15%);
+  }
 
   @include mediaQuery("tablet") {
     padding: 10px 30px;
@@ -36,5 +41,10 @@ $buttonMods: (
 @each $mod, $color in $buttonMods {
   .#{$mod} {
     background-color: $color;
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+      background-color: lighten($color, 15%);
+    }
   }
 }

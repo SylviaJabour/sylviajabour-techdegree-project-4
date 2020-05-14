@@ -2,11 +2,11 @@
 
 @mixin mediaQuery($breakpoint) {
   @if $breakpoint == "tablet" {
-    @media (max-width: $breakpoint__tablet) {
+    @media (min-width: $breakpoint__tablet) {
       @content;
     }
   } @else if $breakpoint == "desktop" {
-    @media (max-width: $breakpoint__desktop) {
+    @media (min-width: $breakpoint__desktop) {
       @content;
     }
   } @else {
