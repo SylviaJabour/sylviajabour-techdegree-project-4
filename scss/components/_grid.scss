@@ -31,6 +31,12 @@ $columnNumber: 12;
   }
 }
 
+.centered {
+  @include mediaQuery("tablet") {
+    @include centered;
+  }
+}
+
 .row {
   display: flex;
   flex-direction: column;
